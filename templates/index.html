@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Exam Monitoring</title>
+
+    <!-- 🔄 Auto refresh -->
+    <meta http-equiv="refresh" content="3">
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        img {
+            margin: 10px;
+            border: 3px solid red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🚨 AI Exam Monitoring Dashboard</h1>
+
+<h2>📹 Live Camera</h2>
+<img src="/video" width="600">
+
+<h2>📸 Detected Images</h2>
+
+{% for img in images %}
+    <img src="{{ url_for('static', filename='detections/' + img) }}" width="200">
+{% endfor %}
+
+</body>
+</html>
